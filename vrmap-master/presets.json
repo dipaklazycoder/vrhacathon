@@ -7,5 +7,9 @@
   { "title": "SGBT Lux",
     "latitude": 49.6120438,
     "longitude": 6.1235623
+  },
+  { "title": "SG GSC Bangalore",
+    "latitude": 12.9822748,
+    "longitude": 77.7376163
   }
 ]
