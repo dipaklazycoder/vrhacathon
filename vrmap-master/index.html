@@ -23,37 +23,35 @@
   </head>
   <body>
     <div id="introDialog">
-      <h1>VR Map - OpenStreetMap goes WebVR</h1>
+      <h1>VR Map - Please Choose SG Office</h1>
+     
       <div id="locationSettings">
       <select id="locationPresets"></select><br>
       <input type="number" class="coords" id="locLatitude" placeholder="latitude" step="0.00001" min="-90" max="90"> /
       <input type="number" class="coords" id="locLongitude" placeholder="longitude" step="0.00001" min="-180" max="180"><br>
       <button id="locationLoadButton">Load location</button>
       </div>
-      <div id="legalinfo">
-      <p>The source code can be found as
-        <a href="https://github.com/KaiRo-at/vrmap">KaiRo-at/vrmap at GitHub</a>.
-      </p>
-      <p>Map data and imagery of ground tiles &copy;
-        <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>
-        contributors, under <a href="http://www.openstreetmap.org/copyright"
-        target="_blank">ODbL/CC-BY-SA</a> licenses.
-      </p>
-      </div>
       <p class="dialogButtonLine">
         <button id="introDialogCloseButton">Start</button>
       </p>
     </div>
+	
     <a-scene background="color: #CFEBFD">
+	<a-assets>
+	 <img id="welcome" src="assets/welcome.png">
+	
 	 <a-asset-item id="mv-obj" src="galeria.obj"></a-asset-item>
      <a-asset-item id="mv-mtl" src="galeria.mtl"></a-asset-item>
+	 </a-assets>
 	
       <a-entity id="ground" geometry="primitive: box; width: 2000; height: 0.01; depth: 2000;" position="0 -0.01 0" material="transparent: true; opacity: 0.01;"></a-entity>
       <a-entity id="map">
+	   <a-image src="#welcome" position=".080 11.052 50.082" scale="30.074 21.916 4 "></a-image>
+
         <a-entity id="tiles">
         </a-entity>
 		 <a-entity id="world">
-
+        
         <!-- Environment model -->
         <a-entity obj-model="obj: #mv-obj; mtl: #mv-mtl" position="0 0 0"></a-entity>
 
@@ -61,7 +59,7 @@
         <a-entity id="items">
         </a-entity>
       </a-entity>
-      <a-entity id="cameraRig" position="0 0 0" movement-controls="speed: 1; fly: true; camera: #head;" position-limit="ymin: 0; ymax: 100;">
+      <a-entity id="cameraRig" position="1 6 100" movement-controls="speed: 1; fly: true; camera: #head;" position-limit="ymin: 0; ymax: 100;">
         <!-- camera -->
         <a-entity id="head" camera="active: true" look-controls position="0 1.6 0"><a-entity cursor="rayOrigin: mouse;" raycaster="far: 2; objects: .clickable;"></a-entity></a-entity>
         <!-- hand controls -->

@@ -164,10 +164,10 @@ function toggleMenu(event) {
 function loadScene() {
   while (tiles.firstChild) { tiles.removeChild(tiles.firstChild); }
   while (items.firstChild) { items.removeChild(items.firstChild); }
-  document.querySelector("#cameraRig").object3D.position.set(0, 0, 0);
+  document.querySelector("#cameraRig").object3D.position.set(1, 6, 100);
   loadGroundTiles();
   //loadTrees();
-  loadBuildings();
+  //loadBuildings();
 }
 
 function getTagsForXMLFeature(xmlFeature) {
